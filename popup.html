@@ -1,0 +1,29 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Getting Started Extension's Popup</title>
+    <style>
+      body {
+        width:500px;
+      }
+      .btn{
+        display:none;
+      }
+      
+    </style>
+  </head>
+  <body>
+    <a id="init" href=""target="_blank">Authorize App</a><br/>
+    <input type="checkbox" id="HTMLanchor"></input>HTML anchor tag<br/>
+    <input type="checkbox" id="link"></input>link<br/>
+    <input type="checkbox" id="thunder"></input>Post to Thunderous Wizards as link<br/>
+    <p id="preview"></p>
+    <button class="btn" data-clipboard-target="#preview"></button>
+  </body>
+
+    <script src="clipboard.js-master/dist/clipboard.min.js"></script>
+    <script src="jquery-2.1.4.min.js"></script>
+    <script src="popup.js"></script>
+    <script src="background.js"></script>
+</html>
+

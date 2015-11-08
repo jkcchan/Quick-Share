@@ -1,0 +1,22 @@
+{
+  "manifest_version": 2,
+
+  "name": "Getting started example",
+  "description": "This extension shows a Google Image search result for the current page",
+  "version": "1.0",
+  "background": {
+    "page": ["background.html"]
+  },
+  "browser_action": {
+    "default_icon": "icon.png",
+    "default_popup": "popup.html"
+  },
+  "content_scripts": [ {
+    "js": [ "jquery-2.1.4.min.js","clipboard.js-master/dist/clipboard.min.js"],
+    "matches": [ "http://*/*", "https://*/*"]
+  }],
+  "permissions": [
+    "tabs",
+    "https://ajax.googleapis.com/"
+  ]
+}
