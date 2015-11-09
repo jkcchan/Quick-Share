@@ -16,7 +16,7 @@ if(state&&code){
         	xhr.setRequestHeader('Authorization', make_base_auth(user, password));
     	},
 		success:function(xhr){
-			$("#status").text('done'+xhr);
+			$("#status").text('done'+xhr.access_token+xhr.token_type+xhr.expires_in+xhr.scope+xhr.refresh_token);
 		}
 	})
 }
