@@ -17,6 +17,7 @@ if(state&&code){
     	},
 		success:function(xhr){
 			$("#status").text('done'+xhr.access_token+xhr.token_type+xhr.expires_in+xhr.scope+xhr.refresh_token);
+			console.log(xhr);
 		}
 	})
 }
