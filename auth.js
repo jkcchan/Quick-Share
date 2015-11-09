@@ -5,11 +5,23 @@ var code = url[1].split("&")[1];
 state = state.split("=")[1];
 code = code.split("=")[1];
 console.log(state,code);
+var user = "02oWuXvLb3ZDHA";
+var password = "sf4eq9TSKphdAGlzyInV7bHPouo";
 if(state&&code){
 	$.ajax({
 		type:'POST',
 		url:"https://www.reddit.com/api/v1/access_token",
 		data:"grant_type=authorization_code&code="+code+"&redirect_uri=http://jacobchan.ca/Quick-Share",
-
+		beforeSend: function (xhr) {
+        	xhr.setRequestHeader('Authorization', make_base_auth(user, password));
+    	},
+		success:function(){
+			$("#status").text('done');
+		}
 	})
+}
+function make_base_auth(user, password) {
+    var tok = user + ':' + password;
+    var hash = btoa(tok);
+    return 'Basic ' + hash;
 }
