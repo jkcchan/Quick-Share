@@ -16,7 +16,7 @@ if(state&&code){
         	xhr.setRequestHeader('Authorization', make_base_auth(user, password));
     	},
 		success:function(xhr){
-			$("#status").text('done'+xhr.responseText);
+			$("#status").text('done'+xhr);
 		}
 	})
 }
